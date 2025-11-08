@@ -1,0 +1,18 @@
+# Virtual Environment
+venv/
+pyvenv.cfg
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+
+# Editor/IDE specific files
+.vscode/
+
+
+# Docker-related files that might contain secrets or are purely build artifacts
+# Note: Keep Dockerfile and requirements.txt
+# .dockerignore  <-- (Optional, most projects commit this)
