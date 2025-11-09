@@ -32,7 +32,7 @@ Below are the main technical components involved in each phase of the project:
 - **Containerization:** Docker (for packaging and running the app)  
 - **Hosting Platform:** Render (for live deployment)  
  
-### Visualisation 
+# Visualisation 
 
 
 
