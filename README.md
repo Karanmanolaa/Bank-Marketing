@@ -35,4 +35,14 @@ Below are the main technical components involved in each phase of the project:
 # Visualisation 
 
 
-
+![Correlation Heatmap](assets/Corr_heatmap.png)
+![Education Distribution](assets/Dist_Education.png)
+![Job Distribution](assets/Dist_job.png)
+![Marital Status Distribution](assets/Dist_marital_status.png)
+![Contact Type](assets/Dist_contact.png)
+![Housing Loan Distribution](assets/Dist_of_housing.png)
+![Loan Distribution](assets/Distribution_of_loan.png)
+![Subscription Rate by Job](assets/subs_rate_of_job.png)
+![Subscription Rate by Month](assets/subs_rate_by_month.png)
+![Day of Week Distribution](assets/Dist_of_day_of_week.png)
+![Month Distribution](assets/Dist_month.png)
