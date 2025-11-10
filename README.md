@@ -22,10 +22,11 @@ This project was built using **Python** and several key data science and deploym
 Below are the main technical components involved in each phase of the project:
 
 ###  Data Analysis & Modeling
-- **Libraries:** pandas, NumPy, scikit-learn, Matplotlib, Seaborn  
-- **Algorithm:** Random Forest Classifier, Decision tree, XG Boost boost  
+- **Libraries:** pandas, NumPy, scikit-learn, Matplotlib,Xgboost, joblib 
+- **Algorithm:** Random Forest Classifier, Decision tree, XG Boost 
 - **Model Tuning:** GridSearchCV for hyperparameter optimization  
-- **Pipeline:** Combined preprocessing and model into a single workflow using `ColumnTransformer` and `Pipeline`  
+- **Pipeline:** Combined preprocessing and model into a single workflow using `ColumnTransformer` and `Pipeline`
+- **Evaluation Metrics:** accuracy_score, precision_score, recall_score, f1_score, classification_report, confusion_matrix  
 
 ###  Deployment
 - **Framework:** Flask (for building the API)  
