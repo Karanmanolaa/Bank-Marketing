@@ -6,7 +6,7 @@ I used the Bank Marketing dataset from Kaggle, downloaded using the Kaggle API (
 After cleaning and exploring the data, I trained a Random Forest Classifier that achieved strong predictive accuracy.
 Finally, I built a Flask web app, containerized it with Docker, and deployed it on Render for live predictions:
 
-#### https://bank-marketing-oqbz.onrender.com/
+#### [https://bank-marketing-oqbz.onrender.com/](https://bank-marketing-oqbz.onrender.com)
 
 #  Dataset Information
 
