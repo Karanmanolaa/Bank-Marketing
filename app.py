@@ -59,3 +59,9 @@ def predict_api():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     app.run(host="0.0.0.0", port=port)
+<<<<<<< HEAD
+=======
+
+
+# change from main branch - This is a test commit
+>>>>>>> f826732 (feat:conflicting change on feature branch)
