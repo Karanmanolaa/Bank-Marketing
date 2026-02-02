@@ -15,4 +15,5 @@ dist/
 
 # Docker-related files that might contain secrets or are purely build artifacts
 # Note: Keep Dockerfile and requirements.txt
-# .dockerignore  <-- (Optional, most projects commit this)
+# .dockerignore  <-- (Optional, most projects commit this)DS_store
+.DS_Store
