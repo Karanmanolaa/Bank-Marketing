@@ -1,6 +1,5 @@
-# Virtual Environment
+# Virtual environment
 venv/
-pyvenv.cfg
 
 # Python artifacts
 __pycache__/
@@ -9,11 +8,16 @@ __pycache__/
 build/
 dist/
 
-# Editor/IDE specific files
-.vscode/
+# ML artifacts
+mlruns/
+mlflow.db
+*.joblib
 
+# Data
+data/*.csv
 
-# Docker-related files that might contain secrets or are purely build artifacts
-# Note: Keep Dockerfile and requirements.txt
-# .dockerignore  <-- (Optional, most projects commit this)DS_store
+# macOS files
 .DS_Store
+
+# Editor
+.vscode/
