@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template
-import joblib, pandas as pd
+import joblib
+import pandas as pd
 import os
 
 app = Flask(__name__, template_folder="../templates")
