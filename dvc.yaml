@@ -1,0 +1,8 @@
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+    - data/bank-additional-full.csv
+    - src/train.py
+    outs:
+    - models/model.joblib
