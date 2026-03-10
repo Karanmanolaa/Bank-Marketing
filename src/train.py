@@ -20,7 +20,6 @@ from sklearn.metrics import accuracy_score, roc_auc_score
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 
-
 # setting mlflow experiment
 mlflow.set_experiment("bank_marketing_model")
 
@@ -45,18 +44,14 @@ num_cols = X.select_dtypes(exclude="object").columns
 preprocess = ColumnTransformer(
     transformers=[
         ("cat", OneHotEncoder(handle_unknown="ignore"), cat_cols),
-        ("num", "passthrough", num_cols)
+        ("num", "passthrough", num_cols),
     ]
 )
 
 
 # train test split
 X_train, X_test, y_train, y_test = train_test_split(
-    X,
-    y,
-    test_size=0.2,
-    random_state=42,
-    stratify=y
+    X, y, test_size=0.2, random_state=42, stratify=y
 )
 
 
@@ -68,13 +63,11 @@ models = {
         max_depth=15,
         min_samples_split=5,
         min_samples_leaf=2,
-        random_state=42
+        random_state=42,
     ),
     "gradient_boosting": GradientBoostingClassifier(
-        n_estimators=200,
-        learning_rate=0.05,
-        max_depth=3
-    )
+        n_estimators=200, learning_rate=0.05, max_depth=3
+    ),
 }
 
 
@@ -90,10 +83,7 @@ for model_name, model in models.items():
     with mlflow.start_run(run_name=model_name):
 
         # creating pipeline
-        pipe = Pipeline([
-            ("preprocess", preprocess),
-            ("model", model)
-        ])
+        pipe = Pipeline([("preprocess", preprocess), ("model", model)])
 
         # training model
         pipe.fit(X_train, y_train)
@@ -126,7 +116,7 @@ for model_name, model in models.items():
             sk_model=pipe,
             artifact_path="model",
             signature=signature,
-            input_example=X_train.iloc[:5]
+            input_example=X_train.iloc[:5],
         )
 
         # selecting best model

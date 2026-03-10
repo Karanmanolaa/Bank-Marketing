@@ -7,17 +7,36 @@ app = Flask(__name__, template_folder="../templates")
 pipe = joblib.load("models/model.joblib")
 
 CATS = {
-  "job": ['admin.','blue-collar','technician','services','management','retired',
-          'entrepreneur','self-employed','housemaid','unemployed','student'],
-  "marital": ['married','single','divorced'],
-  "education": ['basic.4y','basic.6y','basic.9y','high.school','university.degree','professional.course','illiterate'],
-  "default": ['no','yes','unknown'],
-  "housing": ['no','yes'],
-  "loan": ['no','yes'],
-  "contact": ['cellular','telephone'],
-  "month": ['mar','apr','may','jun','jul','aug','sep','oct','nov','dec'],
-  "day_of_week": ['mon','tue','wed','thu','fri'],
-  "poutcome": ['nonexistent','failure','success'],
+    "job": [
+        "admin.",
+        "blue-collar",
+        "technician",
+        "services",
+        "management",
+        "retired",
+        "entrepreneur",
+        "self-employed",
+        "housemaid",
+        "unemployed",
+        "student",
+    ],
+    "marital": ["married", "single", "divorced"],
+    "education": [
+        "basic.4y",
+        "basic.6y",
+        "basic.9y",
+        "high.school",
+        "university.degree",
+        "professional.course",
+        "illiterate",
+    ],
+    "default": ["no", "yes", "unknown"],
+    "housing": ["no", "yes"],
+    "loan": ["no", "yes"],
+    "contact": ["cellular", "telephone"],
+    "month": ["mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"],
+    "day_of_week": ["mon", "tue", "wed", "thu", "fri"],
+    "poutcome": ["nonexistent", "failure", "success"],
 }
 
 NUMS = [
@@ -37,11 +56,13 @@ FIELDS = list(CATS.keys()) + NUMS
 
 @app.get("/health")
 def health():
-    return jsonify({"status":"ok"})
+    return jsonify({"status": "ok"})
+
 
 @app.get("/")
 def index():
     return render_template("index.html", cats=CATS, nums=NUMS)
+
 
 @app.post("/predict-form")
 def predict_form():
@@ -57,7 +78,7 @@ def predict_form():
             data[k] = float(v)
         except:
             data[k] = 0.0
-            if k in ["age","duration","campaign","pdays","previous"]:
+            if k in ["age", "duration", "campaign", "pdays", "previous"]:
                 data[k] = int(data[k])
 
         df = pd.DataFrame([data], columns=FIELDS)
@@ -76,11 +97,11 @@ def predict_api():
     y = int(p >= 0.5)
     return jsonify({"prediction": y, "probability": p})
 
+
 if __name__ == "__main__":
 
     port = int(os.environ.get("PORT", 8000))
     app.run(host="0.0.0.0", port=port)
 
-
     port = int(os.environ.get("PORT", 8001))
-    app.run(host="0.0.0.0", port=port,debug=True)
+    app.run(host="0.0.0.0", port=port, debug=True)
