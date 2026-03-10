@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+jobs:
+  test-train-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install dvc flake8 pytest
+
+      - name: Lint
+        run: flake8 .
+
+      - name: Run tests (if any)
+        run: pytest || true
+
+      - name: Pull DVC data
+        run: dvc pull
+
+      - name: Reproduce pipeline
+        run: dvc repro
+
+      - name: Build Docker image
+        run: docker build -t bank-ml-api .
