@@ -21,16 +21,16 @@ CATS = {
 }
 
 NUMS = [
-"age",
-"duration",
-"campaign",
-"pdays",
-"previous",
-"emp.var.rate",
-"cons.price.idx",
-"cons.conf.idx",
-"euribor3m",
-"nr.employed"
+    "age",
+    "duration",
+    "campaign",
+    "pdays",
+    "previous",
+    "emp.var.rate",
+    "cons.price.idx",
+    "cons.conf.idx",
+    "euribor3m",
+    "nr.employed",
 ]
 FIELDS = list(CATS.keys()) + NUMS
 
