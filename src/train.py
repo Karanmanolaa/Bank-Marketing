@@ -2,6 +2,8 @@
 import pandas as pd
 import joblib
 import mlflow
+import os
+
 import mlflow.sklearn
 
 # mlflow model signature
@@ -126,6 +128,8 @@ for model_name, model in models.items():
 
 
 # saving best model
+
+os.makedirs("models", exist_ok=True)
 joblib.dump(best_model, "models/model.joblib")
 
 print("Best model saved")
