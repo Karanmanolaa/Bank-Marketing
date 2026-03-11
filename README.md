@@ -12,54 +12,6 @@ Live application:
 
 Beyond the core machine learning workflow, this project also focuses on building a reproducible and production-style ML pipeline. The training process is tracked with MLflow, data and pipeline stages are managed using DVC, and a CI/CD pipeline with GitHub Actions automatically runs linting, training, testing, and Docker image builds to ensure the system remains reliable and reproducible.
 
-## Project Architecture
-
-```
-Dataset
-  |
-  ▼
-DVC Data Versioning
-  |
-  ▼
-Training Pipeline (src/train.py)
-  |
-  ▼
-MLflow Experiment Tracking
-  |
-  ▼
-Trained Model (model.joblib)
-  |
-  ▼
-Flask API (api/app.py)
-  |
-  ▼
-Docker Container
-  |
-  ▼
-Render Deployment
-```
-
-## Project Structure
-
-```
-api/
- └── app.py            # Flask API serving predictions
-
-src/
- └── train.py          # Model training pipeline
-
-tests/
- └── test_api.py       # API tests
-
-dvc.yaml               # Reproducible training pipeline
-dvc.lock               # Pipeline dependency tracking
-
-.github/workflows/
- └── ci.yml            # CI/CD pipeline
-
-Dockerfile             # Containerized deployment
-```
-
 #  Technical Aspects
 
 This project was built using **Python** and several key data science and deployment tools.  
