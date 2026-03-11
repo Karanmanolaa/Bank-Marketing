@@ -53,25 +53,6 @@ The application is packaged using Docker, ensuring that the environment, depende
 
 The containerized Flask application is deployed on Render, allowing users to interact with the trained model through a live web interface.
 
-### Project Structure
-
-The repository is organized to reflect a production-style ML workflow:
-
-api/
- └── app.py                # Flask API serving the trained model
-
-src/
- └── train.py              # Model training pipeline
-
-tests/
- └── test_api.py           # API health tests
-
-dvc.yaml                   # Reproducible ML pipeline
-.github/workflows/ci.yml   # CI/CD pipeline
-
-Dockerfile                 # Containerized application
-
-This structure separates model training, API serving, testing, and deployment to keep the system modular and maintainable.
 
 #  Dataset Information
 
