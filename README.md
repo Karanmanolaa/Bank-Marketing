@@ -24,35 +24,27 @@ Below are the main technical components involved in each phase of the project:
 - **Pipeline:** Combined preprocessing and model into a single workflow using `ColumnTransformer` and `Pipeline`
 - **Evaluation Metrics:** accuracy_score, precision_score, recall_score, f1_score, classification_report, confusion_matrix
 
-#  MLOps & Reproducibility
+#  MLOps & Engineering
 
-To make the project closer to a production-grade ML system, several MLOps practices were implemented:
+To make the project reproducible and closer to a real production workflow, I integrated several MLOps tools and practices into the pipeline.
 
-- **Experiment Tracking**
+- **Experiment Tracking — MLflow**
+MLflow is used to track model experiments, parameters, and evaluation metrics across different training runs.
 
-MLflow is used to track multiple model experiments, parameters, and evaluation metrics. This allows comparison between models and ensures reproducibility of training runs.
+- **Data & Pipeline Versioning — DVC**
+DVC manages the dataset and training pipeline so that changes in data or code trigger reproducible training runs.
 
-- **Data Versioning**
+- **Backend API — Flask**
+The trained model is served through a Flask API that exposes a prediction endpoint.
 
-DVC (Data Version Control) is used to manage datasets and the training pipeline. The DVC pipeline automates model training and ensures that changes in data or code trigger reproducible training runs.
+- **Containerization — Docker**
+Docker is used to package the application and its dependencies into a consistent runtime environment.
 
-- **Continuous Integration**
+- **Continuous Integration — GitHub Actions**
+A CI pipeline automatically runs linting (flake8), pipeline execution (dvc repro), API tests (pytest), and Docker build checks whenever new code is pushed.
 
-GitHub Actions is used to automatically validate the project whenever code is pushed. The CI pipeline performs:
-
-- Code linting using flake8
-- Pipeline execution using `dvc repro`
-- API tests using pytest
-- Docker image build verification
-
-- **Containerization**
-
-The application is packaged using Docker, ensuring that the environment, dependencies, and API service run consistently across machines.
-
-- **Deployment**
-
-The containerized Flask application is deployed on Render, allowing users to interact with the trained model through a live web interface.
-
+- **Deployment — Render**
+The Dockerized Flask application is deployed on Render to provide a live prediction service.
 
 #  Dataset Information
 
