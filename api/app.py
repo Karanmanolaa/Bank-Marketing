@@ -34,8 +34,8 @@ CATS = {
     "housing": ["no", "yes"],
     "loan": ["no", "yes"],
     "contact": ["cellular", "telephone"],
-    "month": 
-    ["mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"],
+    "month": ["mar", "apr", "may", "jun", "jul", "aug", 
+              "sep", "oct", "nov", "dec"],
     "day_of_week": ["mon", "tue", "wed", "thu", "fri"],
     "poutcome": ["nonexistent", "failure", "success"],
 }
@@ -63,6 +63,7 @@ def health():
 @app.get("/")
 def index():
     return render_template("index.html", cats=CATS, nums=NUMS)
+
 
 @app.post("/predict-form")
 def predict_form():
