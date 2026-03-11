@@ -34,7 +34,7 @@ CATS = {
     "housing": ["no", "yes"],
     "loan": ["no", "yes"],
     "contact": ["cellular", "telephone"],
-    "month": ["mar", "apr", "may", "jun", "jul", "aug", 
+    "month": ["mar", "apr", "may", "jun", "jul", "aug",
               "sep", "oct", "nov", "dec"],
     "day_of_week": ["mon", "tue", "wed", "thu", "fri"],
     "poutcome": ["nonexistent", "failure", "success"],
