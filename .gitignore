@@ -13,8 +13,7 @@ mlruns/
 mlflow.db
 *.joblib
 
-# Data
-data/*.csv
+
 
 # macOS files
 .DS_Store
