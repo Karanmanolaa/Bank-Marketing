@@ -29,21 +29,27 @@ Below are the main technical components involved in each phase of the project:
 To make the project reproducible and closer to a real production workflow, I integrated several MLOps tools and practices into the pipeline.
 
 - **Experiment Tracking — MLflow**
+
 MLflow is used to track model experiments, parameters, and evaluation metrics across different training runs.
 
 - **Data & Pipeline Versioning — DVC**
+  
 DVC manages the dataset and training pipeline so that changes in data or code trigger reproducible training runs.
 
 - **Backend API — Flask**
+  
 The trained model is served through a Flask API that exposes a prediction endpoint.
 
 - **Containerization — Docker**
+  
 Docker is used to package the application and its dependencies into a consistent runtime environment.
 
 - **Continuous Integration — GitHub Actions**
+  
 A CI pipeline automatically runs linting (flake8), pipeline execution (dvc repro), API tests (pytest), and Docker build checks whenever new code is pushed.
 
 - **Deployment — Render**
+  
 The Dockerized Flask application is deployed on Render to provide a live prediction service.
 
 #  Dataset Information
