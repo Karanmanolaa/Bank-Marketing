@@ -34,7 +34,8 @@ CATS = {
     "housing": ["no", "yes"],
     "loan": ["no", "yes"],
     "contact": ["cellular", "telephone"],
-    "month": ["mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"],
+    "month": 
+    ["mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"],
     "day_of_week": ["mon", "tue", "wed", "thu", "fri"],
     "poutcome": ["nonexistent", "failure", "success"],
 }
@@ -63,7 +64,6 @@ def health():
 def index():
     return render_template("index.html", cats=CATS, nums=NUMS)
 
-
 @app.post("/predict-form")
 def predict_form():
     try:
@@ -76,7 +76,7 @@ def predict_form():
             v = data.get(k)
         try:
             data[k] = float(v)
-        except:
+        except (ValueError, TypeError):
             data[k] = 0.0
             if k in ["age", "duration", "campaign", "pdays", "previous"]:
                 data[k] = int(data[k])
