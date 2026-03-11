@@ -62,6 +62,12 @@ I downloaded it directly using the Kaggle API command below:
 !kaggle datasets download -d henriqueyamahata/bank-marketing
 The target column y indicates whether the customer subscribed to a term deposit (yes or no).
 
+#  Deployment
+
+Framework: Flask (REST API for predictions)  
+Containerization: Docker (environment consistency)  
+Hosting Platform: Render 
+
  
 # Visualisation 
 
