@@ -36,7 +36,7 @@ MLflow is used to track multiple model experiments, parameters, and evaluation m
 
 DVC (Data Version Control) is used to manage datasets and the training pipeline. The DVC pipeline automates model training and ensures that changes in data or code trigger reproducible training runs.
 
-Continuous Integration
+- **Continuous Integration**
 
 GitHub Actions is used to automatically validate the project whenever code is pushed. The CI pipeline performs:
 
@@ -53,6 +53,26 @@ The application is packaged using Docker, ensuring that the environment, depende
 
 The containerized Flask application is deployed on Render, allowing users to interact with the trained model through a live web interface.
 
+### Project Structure
+
+The repository is organized to reflect a production-style ML workflow:
+
+api/
+ └── app.py                # Flask API serving the trained model
+
+src/
+ └── train.py              # Model training pipeline
+
+tests/
+ └── test_api.py           # API health tests
+
+dvc.yaml                   # Reproducible ML pipeline
+.github/workflows/ci.yml   # CI/CD pipeline
+
+Dockerfile                 # Containerized application
+
+This structure separates model training, API serving, testing, and deployment to keep the system modular and maintainable.
+
 #  Dataset Information
 
 The dataset used in this project is the Bank Marketing dataset from Kaggle, originally sourced from a Portuguese bank’s marketing campaigns.
@@ -61,12 +81,6 @@ I downloaded it directly using the Kaggle API command below:
 !kaggle datasets download -d henriqueyamahata/bank-marketing
 The target column y indicates whether the customer subscribed to a term deposit (yes or no).
 
-
-
-###  Deployment
-- **Framework:** Flask (for building the API)  
-- **Containerization:** Docker (for packaging and running the app)  
-- **Hosting Platform:** Render (for live deployment)  
  
 # Visualisation 
 
