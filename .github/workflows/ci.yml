@@ -33,7 +33,7 @@ jobs:
         run: dvc repro
 
       - name: Run tests
-        run: pytest
+        run: PYTHONPATH=. pytest
 
       - name: Build Docker image
         run: docker build -t bank-marketing-api .
